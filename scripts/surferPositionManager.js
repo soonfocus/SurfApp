@@ -1,6 +1,6 @@
 
 class SurferPositionManager {
-  constructor(surferId = 'surfer', multiplier = 3) {
+  constructor(surferId = 'surfer', multiplier = 7) {
     this.surfer = document.getElementById(surferId);
     this.multiplier = multiplier;
     this.surferLeft = 0;
@@ -17,8 +17,6 @@ class SurferPositionManager {
     }
 
     const translateValue = alpaCalculated * this.multiplier;
-
-
 
     this.surfer.style.transform = `translateX(${translateValue}px)`;
     this.updateBounds();
