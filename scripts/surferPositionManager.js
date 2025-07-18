@@ -36,7 +36,6 @@ class SurferPositionManager {
   handleOrientation = (data) => {
     const { alpha } = data;
     const alphaValue = this.updatePosition(alpha);
-    console.log('Alpha', alpha, 'AlphaValue', alphaValue);
   }
 
   startDetectingPosition(){
