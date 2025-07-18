@@ -24,7 +24,7 @@ body {
 
 #panel {
   position: absolute;
-  padding: 10px;  
+  padding: 10px;
 }
 
 #timer {
@@ -34,7 +34,7 @@ body {
 
 #life {
   font-size: 80px;
-  color:indigo;
+  color: indigo;
 }
 
 .surfer-zone {
@@ -48,20 +48,28 @@ body {
 
 .surfer {
   height: 500px;
-  width: 60px ;
+  width: 60px;
   background-color: darkblue;
-/* transition: all 0.2s; */
+  /* transition: all 0.2s; */
 }
 
 .sea {
   height: 100vh;
   background-color: rgb(5, 147, 202);
 }
+
 #track {
   height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
+}
+
+#center {
+  position: absolute;
+  height: 100vh;
+  width: 1px;
+  background-color: black;
 }
 
 #tube {

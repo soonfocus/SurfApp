@@ -1,4 +1,3 @@
-
 class SurferPositionManager {
   constructor(surferId = 'surfer', multiplier = 7) {
     this.surfer = document.getElementById(surferId);
@@ -8,38 +7,45 @@ class SurferPositionManager {
   }
 
   updatePosition(alpha) {
-  let alpaCalculated = 0
+    let alphaCalculated = 0
 
     if (alpha <= 180) {
-      alpaCalculated = -alpha;
+      alphaCalculated = -alpha;
     } else if (alpha > 180) {
-      alpaCalculated = 359 - alpha;
+      alphaCalculated = 359 - alpha;
     }
 
-    const translateValue = alpaCalculated * this.multiplier;
+    const translateValue = alphaCalculated * this.multiplier;
 
     this.surfer.style.transform = `translateX(${translateValue}px)`;
     this.updateBounds();
-    return alpaCalculated;
+    return alphaCalculated;
   }
 
   updateBounds() {
-    const { left, right } = this.surfer.getBoundingClientRect();
+    const {
+      left,
+      right
+    } = this.surfer.getBoundingClientRect();
     this.surferLeft = left;
     this.surferRight = right;
   }
 
   getSurferBounds() {
-    return { left: this.surferLeft, right: this.surferRight };
+    return {
+      left: this.surferLeft,
+      right: this.surferRight
+    };
   }
 
   handleOrientation = (data) => {
-    const { alpha } = data;
+    const {
+      alpha
+    } = data;
     this.updatePosition(alpha);
   }
 
-  startDetectingPosition(){
+  startDetectingPosition() {
     window.addEventListener("deviceorientation", this.handleOrientation);
   }
 }
-

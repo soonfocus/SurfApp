@@ -8,25 +8,23 @@ const createObject = (className, id) => {
 
 /* Timer */
 const timer = () => {
-let timerInterval;
-let totalSeconds = 0;
+  let timerInterval;
+  let totalSeconds = 0;
 
-const updateTimerDisplay = () => {
-  const minutes = Math.floor(totalSeconds / 60);
-  const seconds = totalSeconds % 60;
-  document.getElementById('timer').innerText = 
-        String(minutes).padStart(2, '0') + ':' + String(seconds).padStart(2, '0');
-      }
-      
-      const startTimer= () => {
-        if (!timerInterval) {
-          timerInterval = setInterval(() => {
-            totalSeconds++;
-            updateTimerDisplay();
-          }, 1000);
-        }
-      }
+  const updateTimerDisplay = () => {
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
+    document.getElementById('timer').innerText =
+      String(minutes).padStart(2, '0') + ':' + String(seconds).padStart(2, '0');
+  }
+
+  const startTimer = () => {
+    if (!timerInterval) {
+      timerInterval = setInterval(() => {
+        totalSeconds++;
+        updateTimerDisplay();
+      }, 1000);
+    }
+  }
   startTimer()
 }
-
-
