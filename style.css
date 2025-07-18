@@ -19,6 +19,7 @@ body {
   display: none;
   width: 100vw;
   height: 100vh;
+  overflow: hidden;
 }
 
 #panel {
@@ -39,9 +40,10 @@ body {
 .surfer-zone {
   position: absolute;
   width: 100%;
-bottom: 0;
-display: flex;
-justify-content: center;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .surfer {
