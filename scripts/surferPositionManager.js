@@ -31,6 +31,11 @@ class SurferPositionManager {
     this.surferRight = right;
   }
 
+
+  getSurferElement() {
+    return this.surfer;
+  }
+
   getSurferBounds() {
     return {
       left: this.surferLeft,

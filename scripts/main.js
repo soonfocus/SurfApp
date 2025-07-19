@@ -41,5 +41,7 @@ btnStart.addEventListener('click', () => {
   timer()
 
   SurferPositionMng.startDetectingPosition()
+  const surferElement = SurferPositionMng.getSurferElement();
+  TrackElementMng.setSurferElement(surferElement);
   TrackElementMng.start();
 })

@@ -4,6 +4,11 @@ class TrackElementManager {
     this.elementsArray = elementsArray;
     this.numElements = numElements;
     this.elements = [];
+    this.surfer = null;
+  }
+
+  setSurferElement(surferElement) {
+    this.surfer = surferElement;
   }
 
   generateElements() {
@@ -26,6 +31,18 @@ class TrackElementManager {
     return div;
   }
 
+  checkCollision(div) {
+    if (!this.surfer) return false;
+    const surferRect = this.surfer.getBoundingClientRect();
+    const elementRect = div.getBoundingClientRect();
+    return !(
+      surferRect.right < elementRect.left ||
+      surferRect.left > elementRect.right ||
+      surferRect.bottom < elementRect.top ||
+      surferRect.top > elementRect.bottom
+    );
+  }
+
   async animateElements() {
     for (const element of this.elements) {
       const div = this.createDivElement(element);
@@ -35,6 +52,16 @@ class TrackElementManager {
       setTimeout(() => {
         div.style.top = `${this.track.offsetHeight}px`;
       }, 50);
+
+      // Collision detection loop for this element
+      const collisionInterval = setInterval(() => {
+        if (this.checkCollision(div)) {
+          console.log('Collision detected with', element.type);
+          div.style.background = 'yellow'; // Visual feedback
+          clearInterval(collisionInterval);
+        }
+      }, 30);
+
       await new Promise(res => setTimeout(res, element.delay));
     }
   }
