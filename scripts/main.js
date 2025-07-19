@@ -4,9 +4,7 @@ const menu = document.getElementById('menu')
 const rideContainer = document.getElementById('ride-container')
 const lifeContainer = document.getElementById('life')
 
-SurferPositionMng = new SurferPositionManager();
-
-
+SurferMng = new SurferManager();
 
 const elementsArray = [{
     type: 'shark',
@@ -30,7 +28,7 @@ const elementsArray = [{
   }
 ];
 
-const TrackElementMng = new TrackElementManager('#track', elementsArray, 10);
+const TrackMng = new TrackManager('#track', elementsArray, 10);
 
 
 /* Start ride */
@@ -40,8 +38,8 @@ btnStart.addEventListener('click', () => {
 
   timer()
 
-  SurferPositionMng.startDetectingPosition()
-  const surferElement = SurferPositionMng.getSurferElement();
-  TrackElementMng.setSurferElement(surferElement);
-  TrackElementMng.start();
+  SurferMng.startDetectingPosition()
+  const surferElement = SurferMng.getSurferElement();
+  TrackMng.setSurferElement(surferElement);
+  TrackMng.start();
 })

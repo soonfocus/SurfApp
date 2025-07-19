@@ -1,4 +1,4 @@
-class SurferPositionManager {
+class SurferManager {
   constructor(surferId = 'surfer', multiplier = 7) {
     this.surfer = document.getElementById(surferId);
     this.multiplier = multiplier;

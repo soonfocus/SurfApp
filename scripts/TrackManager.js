@@ -1,10 +1,11 @@
-class TrackElementManager {
+class TrackManager {
   constructor(trackSelector, elementsArray, numElements) {
     this.track = document.querySelector(trackSelector);
     this.elementsArray = elementsArray;
     this.numElements = numElements;
     this.elements = [];
     this.surfer = null;
+    this.speed = 5;
   }
 
   setSurferElement(surferElement) {
@@ -27,6 +28,8 @@ class TrackElementManager {
     const div = document.createElement('div');
     div.className = `track-element ${element.type}`;
     div.style.left = `calc(50% + ${element.offset}px)`;
+    div.style.transition = `top ${this.speed}s linear`;
+
     div.textContent = element.type;
     return div;
   }
@@ -51,7 +54,7 @@ class TrackElementManager {
       void div.offsetWidth;
       setTimeout(() => {
         div.style.top = `${this.track.offsetHeight}px`;
-      }, 50);
+      }, 400);
 
       // Collision detection loop for this element
       const collisionInterval = setInterval(() => {
