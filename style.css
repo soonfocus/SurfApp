@@ -77,3 +77,12 @@ body {
   height: 100vh;
   background-color: aquamarine;
 }
+
+.track-element {
+  position: absolute;
+  top: -100px;
+  height: 150px;
+  width: 70px;
+  background: red;
+  transition: top 2s linear;
+}

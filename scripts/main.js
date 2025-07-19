@@ -8,24 +8,29 @@ SurferPositionMng = new SurferPositionManager();
 
 
 
-const elementTypesWithOffsets = [{
+const elementsArray = [{
     type: 'shark',
-    offset: 20,
+    offset: 200,
     delay: 500
   },
   {
     type: 'dolphin',
-    offset: -50,
+    offset: -200,
+    delay: 2000
+  },
+  {
+    type: 'dolphin',
+    offset: 10,
     delay: 2000
   },
   {
     type: 'wave',
-    offset: 80,
+    offset: 100,
     delay: 600
   }
 ];
 
-const TrackElementMng = new TrackElementManager('#track', elementTypesWithOffsets, 10, 700);
+const TrackElementMng = new TrackElementManager('#track', elementsArray, 10);
 
 
 /* Start ride */

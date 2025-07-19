@@ -1,7 +1,7 @@
 class TrackElementManager {
-  constructor(trackSelector, elementTypesWithOffsets, numElements) {
+  constructor(trackSelector, elementsArray, numElements) {
     this.track = document.querySelector(trackSelector);
-    this.elementTypesWithOffsets = elementTypesWithOffsets;
+    this.elementsArray = elementsArray;
     this.numElements = numElements;
     this.elements = [];
   }
@@ -9,7 +9,7 @@ class TrackElementManager {
   generateElements() {
     this.elements = [];
     for (let i = 0; i < this.numElements; i++) {
-      const elementObj = this.elementTypesWithOffsets[i % this.elementTypesWithOffsets.length];
+      const elementObj = this.elementsArray[i % this.elementsArray.length];
       this.elements.push({
         offset: elementObj.offset,
         type: elementObj.type,
@@ -21,10 +21,7 @@ class TrackElementManager {
   createDivElement(element) {
     const div = document.createElement('div');
     div.className = `track-element ${element.type}`;
-    div.style.position = 'absolute';
     div.style.left = `calc(50% + ${element.offset}px)`;
-    div.style.top = '0px';
-    div.style.transition = 'top 2s linear';
     div.textContent = element.type;
     return div;
   }
@@ -36,7 +33,7 @@ class TrackElementManager {
       // Force reflow for transition
       void div.offsetWidth;
       setTimeout(() => {
-        div.style.top = `${this.track.offsetHeight - 40}px`;
+        div.style.top = `${this.track.offsetHeight}px`;
       }, 50);
       await new Promise(res => setTimeout(res, element.delay));
     }
