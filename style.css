@@ -26,6 +26,7 @@ body {
   padding-block: 0;
   padding-inline: 0;
   background: #07000029;
+  z-index: 999;
 }
 
 #ride-container {

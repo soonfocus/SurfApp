@@ -1,5 +1,5 @@
 class SurferManager {
-  constructor(surferId = 'surfer', multiplier = 7) {
+  constructor(surferId = 'surfer', multiplier = 9) {
     this.surfer = document.getElementById(surferId);
     this.multiplier = multiplier;
     this.surferLeft = 0;
