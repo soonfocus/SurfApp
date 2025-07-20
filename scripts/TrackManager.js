@@ -31,7 +31,7 @@ class TrackManager {
     div.className = `track-element ${element.type}`;
     div.style.left = `calc(50% + ${element.offset}px)`;
     div.style.transition = `top ${this.speed}s linear`;
-    div.style.width = `${this.width ?? 300}px`;
+    div.style.width = `${element.width ?? 300}px`;
     div.style.background = element.type === 'shark' ? 'red' : 'green';
 
     return div;

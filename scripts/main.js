@@ -29,7 +29,8 @@ const elementsArray = [{
   },
   {
     type: 'shark',
-    offset: -100,
+    offset: -500,
+    width: 500
   }
 ];
 
