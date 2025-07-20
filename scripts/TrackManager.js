@@ -1,3 +1,7 @@
+/* 
+  Element type: "shark", "life", "tube"
+*/
+
 class TrackManager {
   constructor(trackSelector, elementsArray, elementsReps) {
     this.track = document.querySelector(trackSelector);

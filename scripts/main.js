@@ -11,30 +11,7 @@ backButton.addEventListener('click', () => {
 
 SurferMng = new SurferManager();
 
-
-
-const elementsArray = [{
-    type: 'shark',
-    offset: 200,
-    width: 500
-  },
-  {
-    type: 'shark',
-    offset: -200,
-    delay: 3000
-  },
-  {
-    type: 'shark',
-    offset: 10,
-  },
-  {
-    type: 'shark',
-    offset: -500,
-    width: 500
-  }
-];
-
-const TrackMng = new TrackManager('#track', elementsArray, 10);
+const TrackMng = new TrackManager('#track', pumpingOneTrack, 10);
 
 
 /* Start ride */
