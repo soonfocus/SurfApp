@@ -16,6 +16,7 @@ SurferMng = new SurferManager();
 const elementsArray = [{
     type: 'shark',
     offset: 200,
+    width: 500
   },
   {
     type: 'shark',
@@ -28,7 +29,7 @@ const elementsArray = [{
   },
   {
     type: 'shark',
-    offset: 100,
+    offset: -100,
   }
 ];
 
