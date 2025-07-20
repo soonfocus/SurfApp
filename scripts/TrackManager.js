@@ -31,8 +31,8 @@ class TrackManager {
     div.className = `track-element ${element.type}`;
     div.style.left = `calc(50% + ${element.offset}px)`;
     div.style.transition = `top ${this.speed}s linear`;
+    div.style.background = element.type === 'shark' ? 'red' : 'green';
 
-    div.textContent = element.type;
     return div;
   }
 
@@ -65,7 +65,7 @@ class TrackManager {
           div.style.background = 'yellow'; 
           this.touches++;
           this.touchesElement.textContent = this.touches;
-          
+
           clearInterval(collisionInterval);
         }
       }, 30);

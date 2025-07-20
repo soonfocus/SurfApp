@@ -9,25 +9,25 @@ SurferMng = new SurferManager();
 
 
 const elementsArray = [{
-    type: '1',
+    type: 'shark',
     offset: 200,
   },
   {
-    type: '2',
+    type: 'shark',
     offset: -200,
     delay: 3000
   },
   {
-    type: '3',
+    type: 'shark',
     offset: 10,
   },
   {
-    type: '4',
+    type: 'shark',
     offset: 100,
   }
 ];
 
-const TrackMng = new TrackManager('#track', elementsArray, 2);
+const TrackMng = new TrackManager('#track', elementsArray, 10);
 
 
 /* Start ride */
