@@ -3,15 +3,15 @@
 */
 
 class TrackManager {
-  constructor(trackSelector, elementsArray, elementsReps) {
+  constructor(trackSelector, elementsArray, elementsReps, speed, delayAll) {
     this.track = document.querySelector(trackSelector);
     this.touchesElement = document.querySelector('#touches');
     this.elementsArray = elementsArray;
     this.elementsReps = elementsReps;
     this.elements = [];
     this.surfer = null;
-    this.speed = 5;
-    this.defaultDelay = 2000;
+    this.speed = speed ?? 6;
+    this.defaultDelay = delayAll ?? 3000;
     this.lifeCount = 3;
     this.touches = 0;
   }

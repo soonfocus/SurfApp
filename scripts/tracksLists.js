@@ -29,7 +29,11 @@ const randomOneTrack = [{
 ];
 
 
-const pumpingOneTrack = [{
+const pumpingOneTrack = {
+  speed: 5,
+  delayAll: 3000,
+  elementsReps: 100,
+  elements: [{
     type: 'shark',
     offset: 0,
     width: 500
@@ -39,4 +43,4 @@ const pumpingOneTrack = [{
     offset: -500,
     width: 500
   },
-];
+]}

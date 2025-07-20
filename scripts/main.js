@@ -11,7 +11,9 @@ backButton.addEventListener('click', () => {
 
 SurferMng = new SurferManager();
 
-const TrackMng = new TrackManager('#track', pumpingOneTrack, 10);
+
+const {elements, elementsReps, speed, delayAll} = pumpingOneTrack
+const TrackMng = new TrackManager('#track', elements, elementsReps, speed, delayAll);
 
 
 /* Start ride */
