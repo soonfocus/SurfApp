@@ -16,6 +16,18 @@ body {
   font-size: 130px;
 }
 
+#btn-back {
+  left: 0;
+  bottom: 20px;
+  position: absolute;
+  font-size: 103px;
+  padding: 0px;
+  border: 0;
+  padding-block: 0;
+  padding-inline: 0;
+  background: #07000029;
+}
+
 #ride-container {
   display: none;
   width: 100vw;
@@ -28,7 +40,7 @@ body {
   display: flex;
   justify-content: space-between;
   width: 100vw;
-  padding: 0 20px;
+  padding: 20px 20px 0;
   box-sizing: border-box;
   z-index: 999;
 }

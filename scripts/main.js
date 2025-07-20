@@ -2,7 +2,12 @@
 const btnStart = document.getElementById('btn-start')
 const menu = document.getElementById('menu')
 const rideContainer = document.getElementById('ride-container')
-const lifeContainer = document.getElementById('life')
+const backButton = document.getElementById('btn-back')
+
+backButton.addEventListener('click', () => {
+  location.reload();
+})
+
 
 SurferMng = new SurferManager();
 
