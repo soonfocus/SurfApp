@@ -1,12 +1,12 @@
 class TrackManager {
-  constructor(trackSelector, elementsArray, numElements) {
+  constructor(trackSelector, elementsArray, elementsReps) {
     this.track = document.querySelector(trackSelector);
     this.elementsArray = elementsArray;
-    this.numElements = numElements;
+    this.elementsReps = elementsReps;
     this.elements = [];
     this.surfer = null;
     this.speed = 5;
-    this.defaultDelay = 1000;
+    this.defaultDelay = 2000;
   }
 
   setSurferElement(surferElement) {
@@ -14,15 +14,13 @@ class TrackManager {
   }
 
   generateElements() {
-    this.elements = [];
-    for (let i = 0; i < this.numElements; i++) {
-      const elementObj = this.elementsArray[i % this.elementsArray.length];
-      this.elements.push({
-        offset: elementObj.offset,
-        type: elementObj.type,
-        delay: elementObj.delay ?? this.defaultDelay
-      });
-    }
+    const elementsArrayParsed = this.elementsArray.map((element) => ({
+      ...element,
+      delay: element.delay ?? this.defaultDelay
+    }));
+    
+    const elementsDuplicated = repeatArray(elementsArrayParsed, this.elementsReps);
+    this.elements = elementsDuplicated 
   }
 
   createDivElement(element) {

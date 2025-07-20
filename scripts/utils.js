@@ -28,3 +28,8 @@ const timer = () => {
   }
   startTimer()
 }
+
+const duplicateItems = (arr, numberOfRepetitions) => 
+    arr.flatMap(i => Array.from({ length: numberOfRepetitions }).fill(i));
+
+const repeatArray = (arr, n) => [].concat(...Array(n).fill(arr));
