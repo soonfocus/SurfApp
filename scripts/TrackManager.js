@@ -6,6 +6,7 @@ class TrackManager {
     this.elements = [];
     this.surfer = null;
     this.speed = 5;
+    this.defaultDelay = 1000;
   }
 
   setSurferElement(surferElement) {
@@ -19,7 +20,7 @@ class TrackManager {
       this.elements.push({
         offset: elementObj.offset,
         type: elementObj.type,
-        delay: elementObj.delay
+        delay: elementObj.delay ?? this.defaultDelay
       });
     }
   }
@@ -54,13 +55,13 @@ class TrackManager {
       void div.offsetWidth;
       setTimeout(() => {
         div.style.top = `${this.track.offsetHeight}px`;
-      }, 400);
+      }, 1000);
 
       // Collision detection loop for this element
       const collisionInterval = setInterval(() => {
         if (this.checkCollision(div)) {
           console.log('Collision detected with', element.type);
-          div.style.background = 'yellow'; // Visual feedback
+          div.style.background = 'yellow'; 
           clearInterval(collisionInterval);
         }
       }, 30);

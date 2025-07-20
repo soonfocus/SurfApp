@@ -6,10 +6,11 @@ const lifeContainer = document.getElementById('life')
 
 SurferMng = new SurferManager();
 
+
+
 const elementsArray = [{
     type: 'shark',
     offset: 200,
-    delay: 500
   },
   {
     type: 'dolphin',
@@ -24,7 +25,6 @@ const elementsArray = [{
   {
     type: 'wave',
     offset: 100,
-    delay: 600
   }
 ];
 
