@@ -1,12 +1,15 @@
 class TrackManager {
   constructor(trackSelector, elementsArray, elementsReps) {
     this.track = document.querySelector(trackSelector);
+    this.touchesElement = document.querySelector('#touches');
     this.elementsArray = elementsArray;
     this.elementsReps = elementsReps;
     this.elements = [];
     this.surfer = null;
     this.speed = 5;
     this.defaultDelay = 2000;
+    this.lifeCount = 3;
+    this.touches = 0;
   }
 
   setSurferElement(surferElement) {
@@ -60,6 +63,9 @@ class TrackManager {
         if (this.checkCollision(div)) {
           console.log('Collision detected with', element.type);
           div.style.background = 'yellow'; 
+          this.touches++;
+          this.touchesElement.textContent = this.touches;
+          
           clearInterval(collisionInterval);
         }
       }, 30);

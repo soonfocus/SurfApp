@@ -35,7 +35,7 @@ btnStart.addEventListener('click', () => {
   menu.style.display = 'none';
   rideContainer.style.display = 'block';
 
-  timer()
+  // timer()
 
   SurferMng.startDetectingPosition()
   const surferElement = SurferMng.getSurferElement();
