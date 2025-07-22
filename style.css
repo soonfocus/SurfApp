@@ -12,6 +12,17 @@ body {
   align-items: center;
 }
 
+.btn-start-container {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+
+  button {
+    font-size: 70px;
+    padding: 20px;
+  }
+}
+
 #btn-start {
   font-size: 130px;
 }
