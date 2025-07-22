@@ -6,13 +6,14 @@ class TrackManager {
   constructor(trackSelector, elementsArray, elementsReps, speed, delayAll) {
     this.track = document.querySelector(trackSelector);
     this.touchesElement = document.querySelector('#touches');
+    this.lifeElement = document.querySelector('#life');
     this.elementsArray = elementsArray;
     this.elementsReps = elementsReps;
     this.elements = [];
     this.surfer = null;
     this.speed = speed ?? 6;
     this.defaultDelay = delayAll ?? 3000;
-    this.lifeCount = 3;
+    this.lifeCount = 0;
     this.touches = 0;
   }
 
@@ -67,9 +68,18 @@ class TrackManager {
       const collisionInterval = setInterval(() => {
         if (this.checkCollision(div)) {
           console.log('Collision detected with', element.type);
-          div.style.background = 'yellow'; 
-          this.touches++;
-          this.touchesElement.textContent = this.touches;
+
+          if (element.type === 'shark'){
+            div.style.background = 'yellow'; 
+            this.touches++;
+            this.touchesElement.textContent = this.touches;
+          }
+
+          if (element.type === 'life'){
+            div.style.background = 'lime'; 
+            this.lifeCount++;
+            this.lifeElement.textContent = this.lifeCount;
+          }
 
           clearInterval(collisionInterval);
         }

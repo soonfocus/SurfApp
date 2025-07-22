@@ -30,6 +30,12 @@ const randomOneTrack = {
     type: 'shark',
     offset: -50,
     width: 200
+  },
+  {
+    type: 'life',
+    offset: 200,
+    width: 200,
+    delay: 1000
   }
 ]};
 
