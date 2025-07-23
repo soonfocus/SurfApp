@@ -29,6 +29,23 @@ const timer = () => {
   startTimer()
 }
 
+const countDown = (seconds, element) => {
+  return new Promise((resolve) => {
+      let counter = seconds;
+
+      const interval = setInterval(() => {
+        element.innerText = counter
+        counter--;
+
+        if (counter < 0) {
+          clearInterval(interval);
+          resolve(true); // Resolve the Promise with true
+        }
+      }, 1000);
+    });
+}
+
+
 const duplicateItems = (arr, numberOfRepetitions) => 
     arr.flatMap(i => Array.from({ length: numberOfRepetitions }).fill(i));
 
